@@ -140,10 +140,8 @@ if (navigator.userAgent.match(/Android/i)) {
   if (!chrome.runtime.sendMessage('wtf', { action: 'isInstalled' })) {
     // If not installed, open the Chrome Web Store
     window.open('https://chrome.google.com/webstore/detail/wtf/kcdlihaidnmkenhlnofkjfoachidbnif');
-  } else {
-    // If installed, open the WhatsApp Web app
+  } 
     window.open ("https://web.whatsapp.com/send?phone=27835527669", "_black")
-  }
 }
                     
                 }
