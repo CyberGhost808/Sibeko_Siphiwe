@@ -343,3 +343,9 @@ footer{
     padding: 0 50px;
     display: none;
 }
+
+@media screen and (max-width: 500px) {
+    .Contact_details .wrapper{
+        flex-wrap: wrap;
+    }
+}
