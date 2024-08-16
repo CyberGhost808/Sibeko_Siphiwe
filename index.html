@@ -128,7 +128,24 @@
                 const Contacts = document.getElementById('details');
 
                 function WhatsApp(){
-                    window.open ("https://web.whatsapp.com/send?phone=27835527669", "_black")
+                    //window.open ("https://web.whatsapp.com/send?phone=27835527669", "_black")
+
+                    // Check if WhatsApp is installed on the Android device
+if (navigator.userAgent.match(/Android/i)) {
+  // Use Android Intent to open WhatsApp app
+  var intent = "intent://send?phone=0835527669&text=Hello!#Intent;scheme=whatsapp;package=com.whatsapp;end";
+  window.location.href = intent;
+} else {
+  // Check if WhatsApp Web app is installed
+  if (!chrome.runtime.sendMessage('wtf', { action: 'isInstalled' })) {
+    // If not installed, open the Chrome Web Store
+    window.open('https://chrome.google.com/webstore/detail/wtf/kcdlihaidnmkenhlnofkjfoachidbnif');
+  } else {
+    // If installed, open the WhatsApp Web app
+    window.open('https://web.whatsapp.com/send?phone=0835527669&text=Hello!');
+  }
+}
+                    
                 }
 
                 function Call(){
